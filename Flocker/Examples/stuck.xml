@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!-- Matthew Resch, Intro to Artificial Intelligence -->
+<!-- Test file: Flocker Project, Case 2-->
+<!-- Some Flockers get stuck -->
+
+<!-- Environment Stuff -->
+<world xmlns="http://perceptualscience.rutgers.edu/flocking" width="500" height="500" time="100" debug="true">
+   <defaults>
+     <flocker debug="false" light="true" clear="true" evade="true" align="true" center="true"/>
+   </defaults>
+   
+   <!-- Flockers -->
+   <flocker x="100" y="80" heading="0" />
+   <flocker x="100" y="120" heading="0" />
+   <flocker x="100" y="160" heading="0" />
+ 
+   <!-- Rocks/Obstacles -->
+   <rock x="400" y="0" />
+   <rock x="400" y="10" />
+   <rock x="400" y="20" />
+   <rock x="400" y="30" />
+   <rock x="400" y="40" />
+   <rock x="400" y="50" />
+   <rock x="400" y="60" />
+   <rock x="400" y="70" />
+   <rock x="400" y="80" />
+   <rock x="400" y="80" />
+   <rock x="400" y="90" />
+   <rock x="400" y="100" />
+   <rock x="400" y="110" />
+   <rock x="400" y="120" />
+   <rock x="400" y="130" />
+   <rock x="400" y="140" />
+   <rock x="400" y="150" />
+   <rock x="400" y="160" />
+   <rock x="400" y="170" />
+   <rock x="400" y="180" />
+   <rock x="400" y="190" />
+   <rock x="400" y="200" />
+   <rock x="400" y="210" />
+   <rock x="400" y="220" />
+   <rock x="400" y="230" />
+   <rock x="400" y="240" />
+   <rock x="400" y="250" />
+   <rock x="400" y="260" />
+   <rock x="400" y="270" />
+   <rock x="400" y="280" />
+   <rock x="400" y="290" />
+   <rock x="400" y="300" />
+   <rock x="400" y="310" />
+   <rock x="400" y="320" />
+   <rock x="400" y="330" />
+    
+   <!-- Light Sources --> 
+   <light x="420" y="100" /> 
+   <light x="420" y="120" /> 
+   <light x="380" y="120" /> 
+ 
+</world>

@@ -1,0 +1,59 @@
+Matthew Resch | Intro to AI | Reco Analysis
+===========================================
+
+Parameter Selection
+
+====================
+
+While choosing the params for cross validation, I considered increasing the number of cross folds from 10 to a higher number.
+With this number of folds, we are given a test set of 10000--this allowed me to use as little start data as possible, while 
+maintaining a certain level of accuracy that could be lost by decreasing the size of the test set. Since my computer is relatively
+old, I found increasing the number of folds to higher numbers also led to an increased running time, for a program that already
+took a fair amount of time to complete with only 10 folds.
+
+I took the liberty of increasing the maximum number of neighbors, as I wanted to get an increased accuracy value for each record.
+If I had chosen a lower number of neighbors, then I would have perhaps run into issues involving not having enough neighbors for each
+record, causing the data to be inaccurate.
+
+In order to compromise for human taste, I stuck with Pearson similarity score for the user similarity, as some critics have a tendancy to
+be more critical than others. However, I did use Euclidian similarity score for the item similarity as it was more likely to be normalized.
+
+My custom method is simply just a weighted average between rater similarity and item similarity. A balance factor was initially selected at random
+and was then changed to get more varied data. The balance factor for rater is simply the balance factor, and the item balance factor is 1 - bf.
+The following data has been gathered from running against a smaller set of data, as some unpredicted issues occured yielding NaN seemingly at random
+when performed on a larger set of data.
+
+****************
+* Factor  RMSE *
+****************
+* .90   * .966 *
+* .80   * .971 *
+* .75   * .971 *
+* .65   * .972 *
+* .50   * .975 *
+* .25   * .98  *
+****************
+
+The final set of parameters I decided on are as follows:
+
+	itemSimilarityMeasure = Euclidean
+	raterSimiilarityMeasure = Pearson
+	maxNeighbors = 120
+	minItemOverlapForSimilarity = 12
+	minRaterOverlapForSimilarity = 10
+	numItemNeighbors = 5
+	numRaterNeighbors = 7
+
+More neighbors are taken for raters to make up for human tendancy to be more critical/forgiving when it comes to movie ratings.
+
+
+================
+
+Method Selection
+
+================
+
+In the end, I found that the rater similarity score was the most accurate measure for collaborative filtering: at least for this
+particular set of data. My custom method, the mixed baseline method, as well as item-based methods all performed at a lower standard
+than the rater-based methods. As a matter of fact, the rater baseline even outperformed me. It would appear that using users data to 
+get a rating is just better in regards to MovieLens data than item-based data.
